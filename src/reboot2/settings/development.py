@@ -1,4 +1,4 @@
-from base import *             # NOQA
+from reboot2.settings.base import *             # NOQA
 import sys
 import logging.config
 
