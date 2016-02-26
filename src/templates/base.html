@@ -8,7 +8,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="{% block description %}{% endblock description %}">
-    <meta name="author" content="Arun Ravindran">
     <link rel="shortcut icon" href="{% static 'site/ico/favicon.ico' %}">
 
     <title>{% block title %}{% include "_brandname.html" %} :: {% endblock %}</title>
@@ -16,10 +15,6 @@
     <!-- Bootstrap core CSS -->
     <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
 
-    <!-- Custom styles for this site -->
-    {% block styles %}
-    <link href="{% static 'site/css/main.css' %}" rel="stylesheet">
-    {% endblock styles %}
 
     <!-- Custom tags for the head tag -->
     {% block extrahead %}{% endblock extrahead %}
@@ -42,18 +37,17 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="{% url 'home' %}">
             {% block navbar-brand %}
-              <img src="{% static 'site/img/logo.png' %}" alt="logo">
-              {% include "_brandname.html" %}
+            <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'site/img/logo.png' %}" alt="logo"></a>
+            <a class="navbar-brand" href="{% url 'home' %}">{% include "_brandname.html" %}</a>
             {% endblock %}
-          </a>
+          
         </div>
         {% block navbar-menu %}
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             {% block navbar-left %}{% endblock %}
-          </ul>
+          </ul>	
           <ul class="nav navbar-nav navbar-right">
             {% block navbar-right %}
               {% if user.is_authenticated %}
