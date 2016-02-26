@@ -14,7 +14,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
     <!-- Custom tags for the head tag -->
     {% block extrahead %}{% endblock extrahead %}
@@ -102,18 +102,18 @@
 
     <!-- Site footer -->
     {% block footer %}
+    <br><br><br>
       <!-- Some social button for contact will do -->
       <a name="contact"></a>
       <div class="container">
             <div class="footer">
         <div class="row">
           <div class="col-lg-6">
-              <p>&copy; Company {% now 'Y' %}</p>
+              <p>&copy; eBuslabs {% now 'Y' %}</p>
           </div>
           <div class="col-lg-6 text-right">
             Connect with us on
-            <a href="#"><i class="fa fa-facebook"></i> Facebook</a> or
-            <a href="#"><i class="fa fa-twitter"></i> Twitter</a>
+            <a href="#"><i class="fa fa-github"></i> GitHub</a>
           </div>
         </div>
             </div>
