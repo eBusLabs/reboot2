@@ -10,12 +10,6 @@ install:
   - cp reboot2/settings/local.sample.env reboot2/settings/local.env
   - python manage.py migrate
 script:
-  - python manage.py test profiles
-  - python manage.py test polls
-  - cd profiles
-  - coverage run tests.py
-  - cd ..
-  - cd polls
-  - coverage run tests.py
+  - python manage.py test
 after_success:
   - codecov
