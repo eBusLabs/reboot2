@@ -11,36 +11,28 @@
 
 {% block navbar-right %}
   {% if not user.is_authenticated %}
-<a class="btn btn-default navbar-btn" href="{% url 'accounts:login' %}" role="button">Log in</a>
-&nbsp;&nbsp;
-<a class="btn btn-primary navbar-btn" href="{% url 'accounts:signup' %}" role="button">Sign up</a>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<a class="btn btn-danger navbar-btn" href="{% url 'accounts:login' %}" role="button">Log in</a>&nbsp;&nbsp;
+	<a class="btn btn-primary navbar-btn" href="{% url 'accounts:signup' %}" role="button">Sign up</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   {% else %}
     {{ block.super }}
   {% endif %}
 {% endblock %}
 
 {% block splash %}
-  <div class="jumbotron">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8 col-sm-8">
-          <h1>{% include "_brandname.html" %}</h1>
-          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
-	  <a class="btn btn-primary" href="{% url 'accounts:signup' %}" role="button">Sign up!</a>
-        </div>
-        <div class="col-md-4 col-sm-4">
-
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="jumbotron">
+	<div class="container">
+		<div class="row">
+		  <div class="col-md-8 col-sm-8">
+			  <h1>{% include "_brandname.html" %}</h1>
+			  <p>Welcome to the playground of eBusLabs!</p>
+			  <a class="btn btn-primary" href="{% url 'accounts:signup' %}" role="button">Sign up!</a>
+		  </div>
+	</div>
+	</div>
+</div>
 {% endblock splash %}
 
 {% block container %}
-<!-- Benefits of the Django application -->
-<a name="about"></a>
-
 <div class="container">
   <div class="row">
     <div class="col-lg-4">
@@ -50,17 +42,16 @@
     </div>
     <div class="col-lg-4">
       <h2>Heading 2</h2>
-      <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+      <p>Donec id elit non mi porta gravida at eget metus. </p>
       <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
     </div>
     <div class="col-lg-4">
       <h2>Heading 3 </h2>
-      <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
+      <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
       <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
     </div>
   </div>
 </div>
-
 {% endblock container %}
 
 {% block scripts %}
