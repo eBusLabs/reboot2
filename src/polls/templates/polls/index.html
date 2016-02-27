@@ -1,41 +1,27 @@
 {% extends "base.html" %}
-
 {% load staticfiles %}
 {% load crispy_forms_tags %}
 
 {% block title %}{{ block.super }}Polls	{% endblock %}
-
-{% block navbar-left %}
-  {% include "_navbar.html" with active_link="polls" %}
-{% endblock %}
-
-{% block navbar-right %}
-  {% if not user.is_authenticated %}
-	<a class="btn btn-default navbar-btn" href="{% url 'accounts:login' %}" role="button">Log in</a>
-	&nbsp;&nbsp;
-	<a class="btn btn-primary navbar-btn" href="{% url 'accounts:signup' %}" role="button">Sign up</a>
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  {% else %}
-    {{ block.super }}
-  {% endif %}
-{% endblock %}
+{% block navbar-left %}{% include "_navbar.html" with active_link="polls" %}{% endblock %}
+{% block navbar-right %}{{ block.super }}{% endblock %}
 
 {% block container %}
-<!-- Benefits of the Django application -->
-<a name="about"></a>
-<div class="container">
-{% if latest_question_list %}
-    <ul>
-    {% for question in latest_question_list %}
-        <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No polls are available.</p>
-{% endif %}
-</div>
+
+	<div class="container">
+		<div class="page-header">
+			<h1>Polls</h1>
+		</div>
+		{% if latest_question_list %}
+		    <ul>
+		    {% for question in latest_question_list %}
+		        <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+		    {% endfor %}
+		    </ul>
+		{% else %}
+		    <p>No polls are available.</p>
+		{% endif %}
+	</div>
 {% endblock container %}
 
-{% block scripts %}
-<script src="{% static 'site/js/site.js' %}"></script>
-{% endblock scripts %}
+{% block scripts %}<script src="{% static 'site/js/site.js' %}"></script>{% endblock scripts %}

@@ -62,7 +62,11 @@
 						  <li><a href="{% url 'accounts:logout' %}">Logout</a></li>
 						</ul>
                 	</li>
-              {% endif %}
+                {% else %}
+					<a class="btn btn-danger navbar-btn" href="{% url 'accounts:login' %}" role="button">Log in</a>&nbsp;&nbsp;
+					<a class="btn btn-primary navbar-btn" href="{% url 'accounts:signup' %}" role="button">Sign up</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                {% endif %}
+                
             {% endblock %}
           </ul>
             </ul>
