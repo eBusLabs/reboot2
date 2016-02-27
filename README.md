@@ -4,7 +4,7 @@ reboot2 is a _short description_. It is built with [Python][0] using the [Django
 
 This project has the following basic apps:
 
-* App1 (short desc)
+* Polls (the Django example poll app) 
 * App2 (short desc)
 * App3 (short desc)
 
