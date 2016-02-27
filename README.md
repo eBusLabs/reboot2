@@ -1,4 +1,4 @@
-# reboot2 [![Build Status](https://travis-ci.org/eBusLabs/reboot2.svg?branch=master)](https://travis-ci.org/eBusLabs/reboot2)
+# reboot2 [![Build Status](https://travis-ci.org/eBusLabs/reboot2.svg?branch=master)](https://travis-ci.org/eBusLabs/reboot2) [![codecov.io](https://codecov.io/github/eBusLabs/reboot2/coverage.svg?branch=master)](https://codecov.io/github/eBusLabs/reboot2?branch=master)
 
 reboot2 is a _short description_. It is built with [Python][0] using the [Django Web Framework][1].
 
