@@ -8,3 +8,4 @@ ignore_errors = True
 omit =
     requirements/*
     docs/*
+    logs/*
