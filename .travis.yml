@@ -1,6 +1,8 @@
 language: python
 python:
   - "3.4"
+before_install:
+  - pip install codecov
 install:
   - pip install -r requirements.txt
   - cd ..
@@ -10,3 +12,5 @@ install:
 script:
   - python manage.py test profiles
   - python manage.py test polls
+after_success:
+  - codecov
