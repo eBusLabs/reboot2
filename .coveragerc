@@ -1,0 +1,10 @@
+# .coveragerc to control coverage.py
+[run]
+source =
+    src/
+
+[report]
+ignore_errors = True
+omit =
+    requirements/*
+    docs/*
