@@ -12,5 +12,9 @@ install:
 script:
   - python manage.py test profiles
   - python manage.py test polls
+  - cd reboot2/src/profiles
+  - coverage run tests.py
+  - cd reboot2/src/polls
+  - coverage run tests.py
 after_success:
   - codecov
