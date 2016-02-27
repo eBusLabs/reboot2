@@ -1,13 +1,12 @@
 language: python
 python:
-  - "2.7"
   - "3.4"
 install:
   - pip install -r requirements.txt
   - cd ..
-  - django-admin.py startproject --template=./edge --extension=py,md,html,env my_proj
-  - cd my_proj/src
-  - cp my_proj/settings/local.sample.env my_proj/settings/local.env
+  - django-admin.py startproject --template=./edge --extension=py,md,html,env reboot2
+  - cd reboot2/src
+  - cp reboot2/settings/local.sample.env my_proj/settings/local.env
   - python manage.py migrate
 script:
   - python manage.py test profiles
