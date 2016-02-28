@@ -1,18 +1,17 @@
 {% extends "base.html" %}
-
 {% load crispy_forms_tags %}
 
-{% block navbar %}
-{% endblock %}
+{% block navbar-left %}{% include "_navbar.html" %}{% endblock %}
 
 {% block container %}
-<div class="container form-box">
-  <div class="text-center">
-    <h2>{% block form_heading %}{% endblock %}</h2>
-  </div>
-  {% block form %}
-  {% endblock %}
+<div class="container">
+  	<div class="row">
+  		<div class="col-md-4 col-md-offset-4">
+  			<h2>{% block form_heading %}{% endblock %}</h2>
+		  	{% block form %}
+  			{% endblock %}
+		</div>
+    </div>
 </div>
-
 {% endblock container %}
 
