@@ -2,10 +2,11 @@ from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
 from django.core.urlresolvers import reverse
 from django.views import generic
+from braces.views import LoginRequiredMixin
 
 from .models import Question, Choice
 
-class IndexView(generic.ListView):
+class IndexView(LoginRequiredMixin, generic.ListView):
     template_name = 'polls/index.html'
     context_object_name = 'latest_question_list'
 
@@ -13,11 +14,11 @@ class IndexView(generic.ListView):
         """Return the last five published questions."""
         return Question.objects.order_by('-pub_date')[:5]
 
-class DetailView(generic.DetailView):
+class DetailView(LoginRequiredMixin, generic.DetailView):
     model = Question
     template_name = 'polls/detail.html'
 
-class ResultsView(generic.DetailView):
+class ResultsView(LoginRequiredMixin, generic.DetailView):
     model = Question
     template_name = 'polls/results.html'
 

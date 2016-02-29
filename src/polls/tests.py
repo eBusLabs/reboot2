@@ -15,3 +15,10 @@ class QuestionMethodTests(TestCase):
         time = timezone.now() + datetime.timedelta(days=30)
         future_question = Question(pub_date=time)
         self.assertEqual(future_question.was_published_recently(), False)
+        
+    def test__str__(self):
+        """
+        __str__ should return friendly name for Question() 
+        """
+        new_question = Question(pub_date=timezone.now(),question_text='new question')
+        self.assertEqual(new_question.__str__(), 'new question')
